@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Enter Your Account ID"
+                android:hint="Enter Your ID"
                 android:inputType="textEmailAddress"
                 android:padding="10dp" />
 
