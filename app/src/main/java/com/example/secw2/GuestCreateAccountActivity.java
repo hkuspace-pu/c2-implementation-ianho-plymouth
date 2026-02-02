@@ -9,8 +9,6 @@ import android.widget.Toast;
 import com.example.secw2.Util.UserBean;
 import com.example.secw2.Util.UserService;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 public class GuestCreateAccountActivity extends BaseEdgeToEdgeActivity {
     private EditText etID;
     private EditText etPassword;
