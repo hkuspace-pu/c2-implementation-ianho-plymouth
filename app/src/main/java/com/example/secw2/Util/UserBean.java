@@ -53,7 +53,7 @@ public class UserBean {
         return contact;
     }
 
-    public void Contact(String contact) {
+    public void setContact(String contact) {
         this.contact = contact;
     }
 
