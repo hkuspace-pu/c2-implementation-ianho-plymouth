@@ -1,6 +1,6 @@
 package com.example.secw2.Util;
 
-public class UserBean {
+public class UserBean implements java.io.Serializable {
     private String username;
     private String password;
     private String firstname;
