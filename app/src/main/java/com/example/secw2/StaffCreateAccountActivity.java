@@ -36,7 +36,7 @@ public class StaffCreateAccountActivity extends BaseEdgeToEdgeActivity {
         UserBean mineBean = getIntent().getSerializableExtra("user", UserBean.class);
 
         btnBack.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, StaffHomeActivity.class);
             startActivity(intent);
             finish();
         });
