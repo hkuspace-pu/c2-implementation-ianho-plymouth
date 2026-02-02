@@ -48,6 +48,7 @@ public class MainActivity extends BaseEdgeToEdgeActivity {
                         } else {
                             intent = new Intent(this, GuestHomeActivity.class);
                         }
+                        intent.putExtra("user", user);
                         startActivity(intent);
                         finish();
                     } else {
