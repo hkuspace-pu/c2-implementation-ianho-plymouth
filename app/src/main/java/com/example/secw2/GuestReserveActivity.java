@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.ComponentActivity;
-
-public class GuestReserveActivity extends ComponentActivity {
+public class GuestReserveActivity extends BaseEdgeToEdgeActivity {
     private Button btnBack;
     private Button btnConfirm;
 

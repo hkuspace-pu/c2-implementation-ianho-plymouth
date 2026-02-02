@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.activity.ComponentActivity;
-
-public class GuestHomeActivity extends ComponentActivity {
+public class GuestHomeActivity extends BaseEdgeToEdgeActivity {
     private Button btnViewMenu;
     private Button btnReserveNow;
     private Button btnViewReservation;

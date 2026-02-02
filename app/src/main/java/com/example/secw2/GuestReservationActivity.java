@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.activity.ComponentActivity;
-
-public class GuestReservationActivity extends ComponentActivity {
+public class GuestReservationActivity extends BaseEdgeToEdgeActivity {
     private Button btnBack;
 
     @Override

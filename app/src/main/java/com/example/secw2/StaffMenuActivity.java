@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.activity.ComponentActivity;
-
-public class StaffMenuActivity extends ComponentActivity {
+public class StaffMenuActivity extends BaseEdgeToEdgeActivity {
     private Button btnBack;
     private Button btnEdit1;
     private Button btnDelete1;

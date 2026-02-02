@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.ComponentActivity;
-
-public class GuestCreateAccountActivity extends ComponentActivity {
+public class GuestCreateAccountActivity extends BaseEdgeToEdgeActivity {
     private Button btnRegister;
 
     @Override

@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.ComponentActivity;
-
-public class StaffSettingActivity extends ComponentActivity {
+public class StaffSettingActivity extends BaseEdgeToEdgeActivity {
     private Button btnBack;
     private Button btnReset;
 

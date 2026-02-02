@@ -1,19 +1,18 @@
 package com.example.secw2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    SQLiteDatabase db;
-    String sql;
+import com.example.secw2.Util.UserService;
 
-    private EditText etEmail;
+public class MainActivity extends BaseEdgeToEdgeActivity {
+    private EditText etID;
     private EditText etPassword;
     private Button btnLogin;
     private TextView tvForgotPassword;
@@ -24,26 +23,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etEmail = findViewById(R.id.etEmail);
+        etID = findViewById(R.id.etID);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvForgotPassword = findViewById(R.id.tvForgotPassword);
         tvCreateAccount = findViewById(R.id.tvCreateAccount);
 
         btnLogin.setOnClickListener(v -> {
-            String email = etEmail.getText().toString().trim();
-            // String pwd = etPassword.getText().toString().trim();
-            // validate email & pwd as needed
+            String id = etID.getText().toString().trim();
+            String pwd = etPassword.getText().toString().trim();
 
-            if ("staff".equals(email)) {
-                Intent intent = new Intent(this, StaffHomeActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Intent intent = new Intent(this, GuestHomeActivity.class);
-                startActivity(intent);
-                finish();
+            if (TextUtils.isEmpty(id)) {
+                Toast.makeText(this, "Please enter your ID", Toast.LENGTH_SHORT).show();
+                return;
+            } else if (TextUtils.isEmpty(pwd)) {
+                Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            UserService.getUser(this, id, user -> {
+                if (user == null) {
+                    Toast.makeText(this, "ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    if (pwd.equals(user.getPassword())) {
+                        Intent intent;
+                        if ("staff".equals(user.getUserType())) {
+                            intent = new Intent(this, StaffHomeActivity.class);
+                        } else {
+                            intent = new Intent(this, GuestHomeActivity.class);
+                        }
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(this, "ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }, err -> {
+                Toast.makeText(this, "ID or Password is Incorrect", Toast.LENGTH_SHORT).show();
+            });
         });
 
         tvCreateAccount.setOnClickListener(v -> {
@@ -51,14 +69,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-    }
-
-    private void initialDB() {
-        try {
-            db = SQLiteDatabase.openDatabase("/data/data/com.example.secw2/restaurantDB", null, SQLiteDatabase.CREATE_IF_NECESSARY);
-            //sql = "";
-            db.execSQL(sql);
-        } catch (Exception e) {
-        }
     }
 }
