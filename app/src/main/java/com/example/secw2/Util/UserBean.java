@@ -2,12 +2,12 @@ package com.example.secw2.Util;
 
 public class UserBean {
     private String username;
-    private String pwd;
+    private String password;
     private String firstname;
     private String lastname;
     private String email;
-    private long phone;
-    private String userType;
+    private String contact;
+    private String usertype;
 
     public String getUsername() {
         return username;
@@ -17,12 +17,12 @@ public class UserBean {
         this.username = username;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstname() {
@@ -49,19 +49,19 @@ public class UserBean {
         this.email = email;
     }
 
-    public long getPhone() {
-        return phone;
+    public String getContact() {
+        return contact;
     }
 
-    public void setPhone(long phone) {
-        this.phone = phone;
+    public void Contact(String contact) {
+        this.contact = contact;
     }
 
     public String getUserType() {
-        return userType;
+        return usertype;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setUserType(String usertype) {
+        this.usertype = usertype;
     }
 }
