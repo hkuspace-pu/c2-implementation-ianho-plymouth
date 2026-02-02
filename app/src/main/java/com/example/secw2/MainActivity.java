@@ -3,7 +3,6 @@ package com.example.secw2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,9 +13,6 @@ import com.example.secw2.Util.UserService;
 public class MainActivity extends BaseEdgeToEdgeActivity {
     private EditText etID;
     private EditText etPassword;
-    private Button btnLogin;
-    private TextView tvForgotPassword;
-    private TextView tvCreateAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +21,8 @@ public class MainActivity extends BaseEdgeToEdgeActivity {
 
         etID = findViewById(R.id.etID);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
-        tvForgotPassword = findViewById(R.id.tvForgotPassword);
-        tvCreateAccount = findViewById(R.id.tvCreateAccount);
+        Button btnLogin = findViewById(R.id.btnLogin);
+        TextView tvCreateAccount = findViewById(R.id.tvCreateAccount);
 
         btnLogin.setOnClickListener(v -> {
             String id = etID.getText().toString().trim();

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:gravity="center"
-            android:text="ABC\nRestaurant"
+            android:text="SECW\nRestaurant"
             android:textColor="@android:color/black"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -51,12 +51,12 @@
                 android:textColor="@android:color/black" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:background="@android:drawable/edit_text"
-                android:hint="Enter Your Email Address"
+                android:hint="Enter Your ID"
                 android:inputType="textEmailAddress"
                 android:padding="10dp" />
 
@@ -88,22 +88,14 @@
                 android:textColor="@android:color/white" />
 
             <TextView
-                android:id="@+id/tvForgotPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Forgot Password?"
-                android:textColor="#333333" />
-
-            <TextView
                 android:id="@+id/tvCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="Create Your Account Now"
+                android:text="Create Account Now"
                 android:textColor="#333333" />
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
